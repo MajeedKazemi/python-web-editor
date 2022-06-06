@@ -5,7 +5,7 @@
     "shx": "^0.3.4",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
-    "vite": "2.9.6"
+    "vite": "^2.9.10"
   },
   "resolutions": {
     "vscode-languageserver-types": "3.17.1"
@@ -21,21 +21,24 @@
   "scripts": {
     "clean": "npm run clean --workspaces && npm run clean:amd --workspace client && npm run webpack:clean --workspace client",
     "compile": "npm run compile --workspaces",
-    "lint": "echo 'No linting yet'",
     "dev": "vite --debug --force",
-    "start-example-node": "npm run start --workspace node",
-    "start-example-node:ext": "npm run start:ext --workspace node",
-    "build": "npm run build-client && npm run build-example-node && npm run build-example-client",
+
+    "start-server": "npm run start --workspace server",
+    "start-server:ext": "npm run start:ext --workspace server",
+
+    "build": "npm run build-client && npm run build-server",
+
     "build-client": "npm run build --workspace client",
-    "build-example-node": "npm run build --workspace node",
-    "build-example-client": "npm run build --workspace client && npm run webpack:example-client-build",
-    "webpack:example-client-build": "npm run webpack:build --workspace client",
-    "webpack:example-client-start": "npm run webpack:start --workspace client",
-    "dev:link": "npm link monaco-languageclient --workspace node && npm link monaco-languageclient --workspace client",
-    "dev:unlink": "npm unlink monaco-languageclient --workspace node && npm unlink monaco-languageclient --workspace client"
+    "build-server": "npm run build --workspace server",
+
+    "webpack:client-build": "npm run webpack:build --workspace client",
+    "webpack:client-start": "npm run webpack:start --workspace client",
+
+    "dev:link": "npm link monaco-languageclient --workspace server && npm link monaco-languageclient --workspace client",
+    "dev:unlink": "npm unlink monaco-languageclient --workspace server && npm unlink monaco-languageclient --workspace client"
   },
   "workspaces": [
-    "node",
+    "server",
     "client"
   ]
 }

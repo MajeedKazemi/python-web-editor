@@ -7,10 +7,10 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Intellisense + Python Server",
-            "program": "${workspaceRoot}/node/dist/server.js",
+            "program": "${workspaceRoot}/server/dist/server.js",
             "sourceMaps": true,
             "outFiles": [
-                "${workspaceRoot}/node/dist/**/*.js"
+                "${workspaceRoot}/server/dist/**/*.js"
             ]
         }
     ]
