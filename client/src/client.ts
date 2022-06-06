@@ -13,7 +13,7 @@ import "monaco-editor/esm/vs/editor/standalone/browser/referenceSearch/standalon
 import "monaco-editor/esm/vs/editor/standalone/browser/toggleHighContrast/toggleHighContrast.js";
 import "monaco-editor/esm/vs/basic-languages/python/python.contribution.js";
 
-import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
+import * as monaco from "monaco-editor";
 
 import { buildWorkerDefinition } from "monaco-editor-workers";
 buildWorkerDefinition("dist", new URL("", window.location.href).href, false);

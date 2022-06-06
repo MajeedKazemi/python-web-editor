@@ -1,5 +1,5 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
@@ -7,7 +7,7 @@
     "module": "ES2020",
     "lib": ["ES2020", "dom"]
   },
-  "references": [{ "path": "../../client" }],
+  "references": [{ "path": "../" }],
   "include": [
     "src/**/*.ts",
   ],
