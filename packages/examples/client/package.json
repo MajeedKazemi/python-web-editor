@@ -1,0 +1,32 @@
+{
+  "name": "example-client",
+  "private": true,
+  "dependencies": {
+    "@codingame/monaco-jsonrpc": "^0.4.0",
+    "monaco-editor": "0.33.0",
+    "monaco-editor-workers": "0.33.0",
+    "monaco-languageclient": "../../client",
+    "normalize-url": "^7.0.3"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "http-server": "^14.1.0",
+    "path-browserify": "^1.0.1",
+    "source-map-loader": "^3.0.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "clean": "npx shx rm -fr dist tsconfig.tsbuildinfo",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "copy:monacoworkers": "shx mkdir -p dist && shx cp -r ../../../node_modules/monaco-editor-workers/dist/workers/editorWorker* ./dist",
+    "build": "npm run clean && npm run compile && npm run copy:monacoworkers",
+    "webpack:clean": "npx shx rm -fr webpack/dist",
+    "webpack:copy:monacoworkers": "shx mkdir -p webpack/dist && shx cp -r ../../../node_modules/monaco-editor-workers/dist/workers/editorWorker* ./webpack/dist",
+    "webpack:build": "npm run webpack:clean && npx webpack && npm run webpack:copy:monacoworkers",
+    "webpack:start": "http-server ./webpack"
+  }
+}
