@@ -19,7 +19,7 @@
     "npm": "8.11.0"
   },
   "scripts": {
-    "clean": "npm run clean --workspaces && npm run clean:amd --workspace client && npm run webpack:clean --workspace client",
+    "clean": "npm run clean --workspaces && npm run webpack:clean --workspace client",
     "compile": "npm run compile --workspaces",
     "dev": "vite --debug --force",
 
